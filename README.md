@@ -13,7 +13,7 @@ Although you can use this image from your command line (but beware it's build wi
 ```dockerfile
 FROM your-base-image
 
-FROM COPY --from=milchundzucker/docker-php-parallel-lint:latest /usr/local/bin/parallel-lint /usr/local/bin/parallel-lint
+COPY --from=milchundzucker/docker-php-parallel-lint:latest /usr/local/bin/parallel-lint /usr/local/bin/parallel-lint
 
 # RUN /usr/local/bin/parallel-lint --version
 ```
