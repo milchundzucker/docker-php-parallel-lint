@@ -24,5 +24,6 @@ LABEL maintainer="jens.kohl@milchundzucker.de"
 
 COPY --from=builder /usr/local/bin/parallel-lint /usr/local/bin/parallel-lint
 
-ENTRYPOINT [ "/usr/local/bin/parallel-lint", "/app" ]
+VOLUME [ "/app" ]
+ENTRYPOINT [ "/usr/local/bin/parallel-lint"]
 CMD [ "--version" ]
