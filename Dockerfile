@@ -9,7 +9,7 @@ ENV COMPOSER_HOME /composer
 RUN set -xe \
   && echo "phar.readonly=Off" > ${PHP_INI_DIR}/conf.d/phar.ini \
   && echo "date.timezone=${PHP_TIMEZONE:-UTC}" > ${PHP_INI_DIR}/conf.d/date_timezone.ini \
-  && curl -fssL -o parallel-lint.tar.gz $(curl -s https://api.github.com/repos/JakubOnderka/PHP-Parallel-Lint/tags | grep "tarball_url" | cut -d "\"" -f 4 | head -n 1) \
+  && curl -fssL -o parallel-lint.tar.gz $(curl -s https://api.github.com/repos/php-parallel-lint/PHP-Parallel-Lint/tags | grep "tarball_url" | cut -d "\"" -f 4 | head -n 1) \
   && tar xzvf parallel-lint.tar.gz --directory /tmp \
   && cd /tmp/$(ls /tmp | grep "PHP-Parallel-Lint") \
   && composer install --no-dev --prefer-dist --no-progress --no-interaction --no-suggest --optimize-autoloader \
